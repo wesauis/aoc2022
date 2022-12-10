@@ -13,15 +13,15 @@ fn main() {
 
     println!("--- Day 1: Calorie Counting ---");
 
-    let top_1 = &elves_ranked[0];
-    println!("The Elf number {} carries the most calories: {}", top_1.0, top_1.1);
+    let (top_1_elf_num, top_1_elf_calories) = &elves_ranked[0];
+    println!("The Elf number {} carries the most calories: {}", top_1_elf_num, top_1_elf_calories);
 
     println!("\n--- Part Two ---");
 
     let top_3 = &elves_ranked[0..3];
     println!("The top 3 Elves, by calories, are:");
-    for elf in top_3 {
-        println!("~> {: >3} carries {} cal", elf.0, elf.1);
+    for (elf_num, elf_calories) in top_3 {
+        println!("~> {: >3} carries {} cal", elf_num, elf_calories);
     }
 
     let total = top_3.iter().map(|&(_, calories)| calories).sum::<u32>();
